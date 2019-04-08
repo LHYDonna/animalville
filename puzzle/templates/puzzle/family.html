@@ -1,0 +1,29 @@
+{% include 'puzzle/base.html' %}
+{% load static %}  
+{% block content %}
+
+{% include 'puzzle/navbar.html' %}
+<title>Family Mode</title>
+
+<h1 id = "wrapper" style="margin-top:100px; margin-left:500px">Zoo Information</h1> 		
+
+<article class="box highlight">
+
+	{% for each in zooList %}
+	<div style="margin-left:400px">
+	    <header>
+	        <h3>{{each.zoo_name}}</h3>
+	    </header>
+	    <img src ={{MEDIA_URL}}{{each.zoo_logo}}>
+	    <p>
+	        <li> City : {{each.zoo_city}} </li>
+	        <li> Suburb : {{each.zoo_suburb}} </li>
+	        <li> Post Code : {{each.zoo_post}} </li>
+	        <li> Open Time : <td>{{each.zoo_open | date:"H:i:s"}}AM </td></li>
+	        <li> Close Time : <td>{{each.zoo_close | date:"H:i:s"}}PM </td> </li>
+	    </p>
+	 </div>
+	   
+    {% endfor %}
+     </article>	
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'puzzle/index.html' %}
+{% load static %}
+
+{% block content %}
+<h1 style="margin-top 100px">Please select which animal you want to play with? </h1>
+{% for each in specieList%}
+<li><a href="{% url 'puzzle:puzzle_game' each.specie_id %}"><img src="../../static/images/{{each.specie_id}}.jpg/" style="height: 200px; margin-top: 60px;"    /></a></li>
+{% endfor %}
+
+
+{% endblock %}	
+
+
+
